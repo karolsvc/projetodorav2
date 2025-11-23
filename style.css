@@ -110,6 +110,11 @@ html {
     margin: auto;
     content: 50px;
 }
+ 
+p#descricao_destaque {
+    color: var(--verde-secundario);
+    font-weight: bold;
+}
 
 .titulo__secundario {
     font-family: var(--fonte1);
