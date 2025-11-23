@@ -84,7 +84,8 @@ html {
     top: 50%;
     transform: translateY(-50%);
     font-family: var(--fonte1);
-    
+    width: 40%;
+    right: 10%;
     font-size: 62px;
     line-height: 1;
     color: white;
