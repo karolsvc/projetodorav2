@@ -1,0 +1,502 @@
+/* =========================================================
+   Projeto Dora — tokens
+   Cor: #FBF6EF (linho), #2E2A22 (texto), #B5572F (terracota / barro),
+        #5C6E4C (verde jardim), #8A6A4B (madeira), #E8DCC8 (linho escuro)
+   Tipo: Fraunces (display), Karla (corpo/utilitária)
+   Assinatura: linha tracejada "ponto de costura" usada como divisor
+   ========================================================= */
+
+:root {
+  --linho: #FBF6EF;
+  --linho-escuro: #EFE3CF;
+  --texto: #2E2A22;
+  --texto-suave: #5C5648;
+  --terracota: #B5572F;
+  --terracota-escuro: #8C4324;
+  --verde: #5C6E4C;
+  --madeira: #8A6A4B;
+  --branco: #FFFFFF;
+
+  --display: "Fraunces", "Georgia", serif;
+  --corpo: "Karla", "Helvetica Neue", Arial, sans-serif;
+
+  --largura-max: 1180px;
+  --raio: 6px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--linho);
+  color: var(--texto);
+  font-family: var(--corpo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--texto);
+}
+
+.pular-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--terracota);
+  color: var(--branco);
+  padding: 0.8rem 1.2rem;
+  z-index: 999;
+}
+.pular-conteudo:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--terracota);
+  outline-offset: 3px;
+}
+
+/* costura: divisor tracejado, motivo de assinatura do site */
+.costura {
+  border: none;
+  border-top: 2px dashed rgba(46, 42, 34, 0.18);
+}
+
+/* =========================================================
+   Cabeçalho
+   ========================================================= */
+
+#cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 246, 239, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px dashed rgba(46, 42, 34, 0.15);
+}
+
+.cabecalho-conteudo {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.marca {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--terracota);
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  width: 100%;
+}
+
+.menu-botao {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-botao span {
+  display: block;
+  height: 2px;
+  background: var(--texto);
+  border-radius: 2px;
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero picture,
+.hero img {
+  width: 100%;
+  height: 78vh;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(46,42,34,0.05) 0%, rgba(46,42,34,0.55) 78%);
+  z-index: 1;
+}
+
+.hero-texto {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem 1.5rem 3.5rem;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  color: var(--branco);
+}
+
+.eyebrow {
+  font-family: var(--corpo);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--linho-escuro);
+  margin: 0 0 0.6rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  color: var(--branco);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.botao {
+  display: inline-block;
+  margin-top: 1.8rem;
+  background: var(--terracota);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--raio);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border: 2px solid var(--terracota);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.botao:hover {
+  background: var(--terracota-escuro);
+  border-color: var(--terracota-escuro);
+  transform: translateY(-2px);
+}
+
+.botao-contorno {
+  background: transparent;
+  color: var(--terracota);
+  border-color: var(--terracota);
+}
+
+.botao-contorno:hover {
+  background: var(--terracota);
+  color: var(--branco);
+}
+
+/* =========================================================
+   Seções gerais
+   ========================================================= */
+
+main section {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.numero-tecido {
+  display: inline-block;
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--terracota);
+  font-size: 1rem;
+  border-bottom: 2px dashed var(--terracota);
+  padding-bottom: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Sobre */
+
+.sobre {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.sobre-cabecalho h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-style: italic;
+}
+
+.sobre-texto p {
+  font-size: 1.08rem;
+  color: var(--texto-suave);
+  max-width: 56ch;
+}
+
+.sobre-texto p + p {
+  margin-top: 1.2rem;
+}
+
+/* Galeria */
+
+.galeria {
+  background: var(--linho-escuro);
+  border-top: 2px dashed rgba(46, 42, 34, 0.18);
+  border-bottom: 2px dashed rgba(46, 42, 34, 0.18);
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.galeria-titulo {
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+}
+
+.galeria-trilho {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 1.5rem 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--madeira) transparent;
+}
+
+.galeria-trilho figure {
+  margin: 0;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: min(80vw, 420px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--raio);
+}
+
+.galeria-trilho img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galeria-trilho figure:hover img {
+  transform: scale(1.06);
+}
+
+.galeria-controles {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.galeria-controles button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--madeira);
+  background: var(--linho);
+  color: var(--madeira);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.galeria-controles button:hover {
+  background: var(--madeira);
+  color: var(--branco);
+}
+
+/* Inscrição */
+
+.inscricao {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+}
+
+.inscricao-intro h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.inscricao-intro p {
+  color: var(--texto-suave);
+  max-width: 40ch;
+}
+
+#endereco h3 {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.lista-enderecos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.lista-enderecos li {
+  background: var(--branco);
+  border-radius: var(--raio);
+  padding: 1.2rem 1.4rem;
+  border-left: 4px solid var(--verde);
+}
+
+.lista-enderecos h4 {
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+  color: var(--verde);
+}
+
+.lista-enderecos a {
+  text-decoration: none;
+  color: var(--texto-suave);
+}
+
+.lista-enderecos a:hover {
+  color: var(--terracota);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   Rodapé
+   ========================================================= */
+
+#rodape {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-top: 2px dashed rgba(46, 42, 34, 0.18);
+  color: var(--texto-suave);
+}
+
+#rodape .marca {
+  color: var(--texto);
+  margin-bottom: 0.4rem;
+}
+
+/* =========================================================
+   Animações de entrada
+   ========================================================= */
+
+.surgir {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.surgir.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   Responsivo
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .sobre,
+  .inscricao {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-botao {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--linho);
+    border-bottom: 2px dashed rgba(46, 42, 34, 0.18);
+    padding: 1rem 1.5rem 1.5rem;
+    gap: 1rem;
+    display: none;
+  }
+
+  nav ul.aberto {
+    display: flex;
+  }
+
+  main section {
+    padding: 3.5rem 1.3rem;
+  }
+}
