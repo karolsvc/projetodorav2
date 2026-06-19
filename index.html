@@ -3,49 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projeto Dora: passe um final de semana no centro do Opus Dei, conheça o dia a dia de uma numerária auxiliar e descubra o que significa fazer do mundo um lar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
   <title>Projeto Dora</title>
 </head>
 <body>
+
+  <a class="pular-conteudo" href="#principal">Pular para o conteúdo</a>
+
   <header id="cabecalho">
-    <h1>Projeto Dora</h1>
+    <div class="cabecalho-conteudo">
+      <p class="marca">Projeto Dora</p>
+      <nav aria-label="Navegação principal">
+        <button class="menu-botao" id="menuBotao" aria-expanded="false" aria-controls="menuLista">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="menuLista">
+          <li><a href="#sobre">O projeto</a></li>
+          <li><a href="#galeria">Momentos</a></li>
+          <li><a href="#inscricao">Inscreva-se</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <section class="imagem">
+
+    <section class="hero">
       <picture>
-        <source media="(max-width: 650px)" srcset="assets/projetod3-250.png" type="image/png">
-        <source media="(max-width: 1050px)" srcset="assets/projetod3-650.png" type="image/png">
-        <img src="assets/projetod3-900.png" alt="meninas participando do Projeto Dora">
+        <source media="(max-width: 650px)" srcset="assets/projetod3460.png" type="image/png">
+        <source media="(max-width: 1000px)" srcset="assets/projetod3-650.png" type="image/png">
+        <img src="assets/projetod3-900.png" alt="Meninas reunidas e sorrindo durante o Projeto Dora">
       </picture>
+      <div class="hero-texto" id="principal">
+        <p class="eyebrow">Um final de semana, uma casa nova</p>
+        <h1>Fazer do mundo<br>um lar</h1>
+        <a class="botao" href="#inscricao">Quero me inscrever</a>
+      </div>
     </section>
-    <section id="principal">
-      <h2>Fazer do mundo um lar</h2>
+
+    <section id="sobre" class="sobre">
+      <div class="sobre-cabecalho">
+        <span class="numero-tecido">01</span>
+        <h2>O que é o Projeto Dora?</h2>
+      </div>
+      <div class="sobre-texto">
+        <p>O Projeto Dora consiste em passar um final de semana no centro do Opus Dei para vivenciar o dia a dia de uma numerária auxiliar e entender melhor o espírito do Opus Dei.</p>
+        <p>O projeto se chama Dora, pois esse era o nome da primeira numerária auxiliar do Opus Dei.</p>
+      </div>
     </section>
-    <section id="sobre">
-      <h2>O que é o Projeto Dora?</h2>
-      <p>O Projeto Dora consiste em passar um final de semana no centro do Opus Dei para vivenciar o dia a dia de uma numerária auxiliar e entender melhor o espírito do Opus Dei.</p>
-      <p>O projeto se chama Dora, pois esse era o nome da primeira numerária auxiliar do Opus Dei.</p>
+
+    <section id="galeria" class="galeria">
+      <h2 class="galeria-titulo">Momentos do Dora</h2>
+      <div class="galeria-trilho" id="galeriaTrilho">
+        <figure><img src="assets/projetod1250.png" alt="Meninas participando de uma atividade do Projeto Dora" loading="lazy"></figure>
+        <figure><img src="assets/projetod2250.png" alt="Meninas participando de uma atividade do Projeto Dora" loading="lazy"></figure>
+        <figure><img src="assets/projetod4250.png" alt="Meninas participando de uma atividade do Projeto Dora" loading="lazy"></figure>
+        <figure><img src="assets/projetod6300.png" alt="Meninas participando de uma atividade do Projeto Dora" loading="lazy"></figure>
+      </div>
+      <div class="galeria-controles">
+        <button id="galeriaAnterior" aria-label="Ver foto anterior">&larr;</button>
+        <button id="galeriaProxima" aria-label="Ver próxima foto">&rarr;</button>
+      </div>
     </section>
-    <section class="inscricao">
-      <div>
+
+    <section id="inscricao" class="inscricao">
+      <div class="inscricao-intro">
+        <span class="numero-tecido">02</span>
         <h2>Inscreva-se</h2>
-        <p>A inscrição não garante a vaga. Será feito uma entrevista prévia.</p>
+        <p>A inscrição não garante a vaga. Será feita uma entrevista prévia.</p>
+        <a class="botao botao-contorno" href="#" id="botaoInscricao">Fazer inscrição</a>
       </div>
 
       <div id="endereco">
-        <h3>Miralta</h3>
-        <p><a href=""></a>Av. Prof. Alfonso Bovero, 153 - Sumaré</p>
-        <h3>Moinho</h3>
-        <p><a href=""></a>Av. José Giorgi, 935 - Granja Viana II, Cotia - SP</p>
-        <h3>Pilar</h3>
-        <p><a href=""></a>Estr. dos Romeiros, km 37,5 - Itaim Mirim, Santana de Parnaíba - SP</p>
+        <h3>Escolha um centro</h3>
+        <ul class="lista-enderecos">
+          <li>
+            <h4>Miralta</h4>
+            <p><a href="https://maps.google.com/?q=Av.+Prof.+Alfonso+Bovero,+153+-+Sumaré,+São+Paulo+-+SP" target="_blank" rel="noopener">Av. Prof. Alfonso Bovero, 153 — Sumaré, São Paulo - SP</a></p>
+          </li>
+          <li>
+            <h4>Moinho</h4>
+            <p><a href="https://maps.google.com/?q=Av.+José+Giorgi,+935+-+Granja+Viana+II,+Cotia+-+SP" target="_blank" rel="noopener">Av. José Giorgi, 935 — Granja Viana II, Cotia - SP</a></p>
+          </li>
+          <li>
+            <h4>Pilar</h4>
+            <p><a href="https://maps.google.com/?q=Estr.+dos+Romeiros,+km+37,5+-+Itaim+Mirim,+Santana+de+Parnaíba+-+SP" target="_blank" rel="noopener">Estr. dos Romeiros, km 37,5 — Itaim Mirim, Santana de Parnaíba - SP</a></p>
+          </li>
+        </ul>
       </div>
     </section>
-    <section class="imagem">
 
-
-    </section>
   </main>
+
+  <footer id="rodape">
+    <p class="marca">Projeto Dora</p>
+    <p>Uma iniciativa ligada à Prelazia do Opus Dei.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
