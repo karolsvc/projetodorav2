@@ -172,6 +172,7 @@ nav a:focus-visible::after {
 .hero {
   position: relative;
   isolation: isolate;
+  
 }
 
 .hero picture,
@@ -262,17 +263,6 @@ main section {
   padding: 5rem 1.5rem;
 }
 
-.numero-tecido {
-  display: inline-block;
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--terracota);
-  font-size: 1rem;
-  border-bottom: 2px dashed var(--terracota);
-  padding-bottom: 0.2rem;
-  margin-bottom: 1rem;
-}
-
 /* Sobre */
 
 .sobre {
@@ -331,8 +321,8 @@ main section {
   margin: 0;
   flex: 0 0 auto;
   scroll-snap-align: start;
-  width: min(80vw, 420px);
-  aspect-ratio: 4 / 5;
+  width: min(80vw, 400px);
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: var(--raio);
 }
