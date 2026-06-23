@@ -82,9 +82,7 @@ h1, h2, h3, h4 {
   border-top: 2px dashed rgba(46, 42, 34, 0.18);
 }
 
-/* =========================================================
-   Cabeçalho
-   ========================================================= */
+/* Cabeçalho */
 
 #cabecalho {
   position: sticky;
@@ -165,9 +163,7 @@ nav a:focus-visible::after {
   border-radius: 2px;
 }
 
-/* =========================================================
-   Hero
-   ========================================================= */
+/* Hero */
 
 .hero {
   position: relative;
@@ -232,20 +228,7 @@ nav a:focus-visible::after {
   transform: translateY(-2px);
 }
 
-.botao-contorno {
-  background: transparent;
-  color: var(--terracota);
-  border-color: var(--terracota);
-}
-
-.botao-contorno:hover {
-  background: var(--terracota);
-  color: var(--branco);
-}
-
-/* =========================================================
-   Seções gerais
-   ========================================================= */
+/*  Seções gerais */
 
 main section {
   max-width: var(--largura-max);
@@ -411,6 +394,7 @@ main section {
   color: var(--terracota);
   text-decoration: underline;
 }
+
 
 /* =========================================================
    Rodapé
